@@ -15,7 +15,7 @@ class OrderCreate(BaseModel):
     symbol:   str
     side:     OrderSide
     type:     OrderType
-    price:    Optional[float] = None  
+    price:    Optional[float] = None
     quantity: int
 
     @field_validator("quantity")
@@ -32,7 +32,7 @@ class OrderCreate(BaseModel):
 
     @field_validator("symbol")
     def symbol_must_be_uppercase(cls, v):
-        return v.upper()  
+        return v.upper()
 
 class OrderResponse(BaseModel):
     id:        str
